@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-
+import { useEffect } from "react";
 import { getPopularMovies } from "../../services/tmdbService";
 
 const HomePage = () => {
