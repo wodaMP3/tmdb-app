@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getPopularMovies } from "../../services/tmdbService";
 import MovieCard from "../../components/MovieCard/MovieCard";
 
@@ -19,6 +20,7 @@ const HomePage = () => {
     }, []);
     return (
         <div className="homePage">
+            <Link to='/login'><button className="login-button">Sign In</button></Link>
             <h1 className="popular">Popular Movies</h1>
             <div className="movie-img"></div>
                 {popularMovies.map(movie => (
