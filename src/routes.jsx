@@ -13,6 +13,7 @@ const RoutesPath = () => {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/registration" element={<RegistrationPage />}/>
         </Routes>
       </div>
     </Router>
