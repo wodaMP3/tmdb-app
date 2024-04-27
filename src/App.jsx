@@ -1,11 +1,15 @@
 
 import './styles/global.css';
 import RoutesPath from "./routes";
+import Header from './components/Header/Header';
 
 const App = () => {
 
   return  (
-    <RoutesPath />
+    <div>
+      <Header />
+      <RoutesPath />
+    </div>
   );
 
 }
