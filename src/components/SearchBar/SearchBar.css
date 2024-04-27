@@ -1,3 +1,4 @@
 .search-bar {
     left: 70%;
+    z-index: 1111;
 }

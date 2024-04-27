@@ -6,13 +6,14 @@ import './LoginButton.css';
 const LoginButton = () => {
 
     return (
-        <div className="login-splash">
             <Link to='/login'>
-            <Button className='login-btn' sx={{
-                color: 'white'
+            <Button className='login-btn' style={{
+                color: 'white',
+                position: "fixed",
+                top: 0,
+                marginTop: 20 
             }}>Login</Button>
             </Link>
-        </div>
     )
 }
 

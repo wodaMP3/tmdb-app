@@ -4,7 +4,9 @@ import './SearchBar.css';
 const Search = () => {
 
     return (
-        <TextField className="search-bar" id="standard-basic" label="Search" variant="standard" />
+        <TextField className="search-bar" id="standard-basic" label="Search" variant="standard" sx={{
+            color: "white"
+        }} />
     )
 }
 

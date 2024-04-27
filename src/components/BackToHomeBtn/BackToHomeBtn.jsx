@@ -4,13 +4,14 @@ import { Button } from "@mui/material";
 
 const BackToHomeBtn = () => {
     return (
-        <div className="back-home">
             <Link to='/'>
-                <Button className="backTo-btn" sx={{
-                    color: 'white'
+                <Button className="backTo-btn" style={{
+                    color: 'white',
+                    position: "fixed",
+                    top: 0,
+                    marginTop: 20
                 }}>Home</Button>
             </Link>
-        </div>
     )
 }
 

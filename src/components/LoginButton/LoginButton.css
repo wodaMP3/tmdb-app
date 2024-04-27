@@ -1,26 +1,5 @@
-.login-splash {
-    z-index: 111;
-    display: block;
-    flex: 1;
-}
-
-
 .login-btn {
-    position: fixed;
-    bottom: 20px;
-
-    font-size: 20px;
-    
-    border: none;
-
-    color: white;
-    background-color: #333;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-    cursor: pointer;
+    z-index: 1111;
+    left: 50px;
+    margin-top: 20px;
 }
-
-.login-btn:hover {
-    text-decoration: underline;
-}
-
