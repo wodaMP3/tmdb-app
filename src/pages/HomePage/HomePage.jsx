@@ -17,6 +17,7 @@ const HomePage = () => {
         };
         fetchPopularMovies();
     }, []);
+    
     return (
         <div className="homePage">
             <h1 className="popular">Popular Movies</h1>
