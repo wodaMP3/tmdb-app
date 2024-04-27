@@ -9,7 +9,7 @@ import LoginButton from "./components/LoginButton/LoginButton";
 const RoutesPath = () => {
     return (
         <Router>
-      <div>
+      <div className="wrapper">
           <BackToHomeBtn />
           <LoginButton />
         <Routes>

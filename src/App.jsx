@@ -6,7 +6,7 @@ import Header from './components/Header/Header';
 const App = () => {
 
   return  (
-    <div>
+    <div className='main'>
       <Header />
       <RoutesPath />
     </div>
