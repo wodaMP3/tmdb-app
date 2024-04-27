@@ -1,11 +1,10 @@
 .header {
     margin: 0;
     padding: 20px;
-    background-color: #333; /* Цвет фона, который вы хотите использовать */
-    color: #fff; /* Цвет текста */
+    background-color: #333; 
+    color: #fff; 
     text-align: center;
-    position: fixed; /* Фиксированное позиционирование */
-    top: 0; /* Прикрепить к верху */
-    width: 100%; /* Растянуть на всю ширину экрана */
-    z-index: 9999; /* Установить z-index, чтобы заголовок был поверх других элементов */
+    position: fixed;
+    top: 0;
+    width: 100%;
 }

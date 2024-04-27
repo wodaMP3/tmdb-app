@@ -1,4 +1,5 @@
 import RegistrationPage from "../RegistrationPage/RegistrationPage";
+import './LoginPage.css';
 
 const LoginPage = () => {
     return (
@@ -9,7 +10,6 @@ const LoginPage = () => {
                 <input className='email-input' type="email" id="email" required/>
                 <label htmlFor="password">Password: </label>
                 <input className='password-input' type="password" name="password" id="password" required/>
-                <button className='sign-button' type="sumbit">Sign In</button>
                 <div>
                     <p>
                         Still have no account? 
