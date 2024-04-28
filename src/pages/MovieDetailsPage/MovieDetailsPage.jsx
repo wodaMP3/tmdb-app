@@ -16,12 +16,13 @@ const MovieDetailsPage = () => {
                 console.error('Error fetching movie details:', error)
             }
         };
+
         fetchMovieDetails();
     }, [id]);
-
     return (
         <div className="movieDetails">
             <h1 className="movie-title">{movieDetails.title}</h1>
+                <p className="genres">{movieDetails.tagline}</p>
         </div>
     )
 }

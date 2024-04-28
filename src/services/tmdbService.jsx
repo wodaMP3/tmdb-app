@@ -13,6 +13,7 @@ export const getPopularMovies = async() => {
             }
         })
         return response.data.results;
+
     }catch (error) {
         console.error('Failed to fetch popular movies:', error);
         return [];
@@ -27,6 +28,8 @@ export const getMovieDetails = async(movieID) => {
                 language: 'en-US',
             }
         })
+        console.log(response.data)
+
         return response.data;
     } catch (error) {
         console.error('Failed to fetch movie details', error);
