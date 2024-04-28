@@ -21,8 +21,15 @@ const MovieDetailsPage = () => {
     }, [id]);
     return (
         <div className="movieDetails">
+            <img src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`} />
             <h1 className="movie-title">{movieDetails.title}</h1>
                 <p className="genres">{movieDetails.tagline}</p>
+                <p>Overview: {movieDetails.overview}</p>
+                <p>Genres:</p>
+                    <ul>
+                        
+                    </ul>
+                <p>{movieDetails.vote_average}</p>
         </div>
     )
 }
