@@ -2,7 +2,6 @@ import axios from "axios";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const API_BASE_URL = 'https://api.themoviedb.org/3';
-const MOVIE_ID = 'https://api.themoviedb.org/3/movie/movie_id';
 
 export const getPopularMovies = async() => {
     try {
@@ -20,9 +19,9 @@ export const getPopularMovies = async() => {
     }
 };
 
-export const getMovieDetails = async() => {
+export const getMovieDetails = async(movieID) => {
     try {
-        const response = await axios.get(MOVIE_ID, {
+        const response = await axios.get(`${API_BASE_URL}/movie/${movieID}`, {
             params: {
                 api_key: apiKey,
                 language: 'en-US',
