@@ -20,12 +20,6 @@ const MovieDetailsPage = ({ movie }) => {
         fetchMovieDetails();
     }, [id]);
 
-    const [value, setValue] = useState('');
-
-    const mappedGenres = value ? movieDetails.map(genre => {
-        return genre;
-    }) : movieDetails;
-
     return (
         <div className="movieDetails">
             <img src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`} />
