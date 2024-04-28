@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../../services/tmdbService";
 
-const MovieDetailsPage = () => {
+const MovieDetailsPage = ({ movie }) => {
     let { id } = useParams();
 
     const [movieDetails, setMovieDetails] = useState({});
@@ -19,15 +19,23 @@ const MovieDetailsPage = () => {
 
         fetchMovieDetails();
     }, [id]);
+
+    const [value, setValue] = useState('');
+
+    const mappedGenres = value ? movieDetails.map(genre => {
+        return genre;
+    }) : movieDetails;
+
     return (
         <div className="movieDetails">
             <img src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`} />
             <h1 className="movie-title">{movieDetails.title}</h1>
-                <p className="genres">{movieDetails.tagline}</p>
                 <p>Overview: {movieDetails.overview}</p>
                 <p>Genres:</p>
-                    <ul>
-                        
+                    <ul className="genres">
+                    {movieDetails.genres && movieDetails.genres.map((genre, index) => (
+                    <li key={index}>{genre.name}</li>
+                ))}
                     </ul>
                 <p>{movieDetails.vote_average}</p>
         </div>
