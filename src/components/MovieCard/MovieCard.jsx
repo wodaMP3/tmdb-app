@@ -9,6 +9,9 @@ const MovieCard = ({ movie }) => {
                     <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                     alt={movie.title} className="movie-img" />
                 </div>
+                <div className='overlay'>
+                    Add to favourites
+                </div>
             </div>
         </Link>
     )
