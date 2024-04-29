@@ -35,7 +35,6 @@ const MovieDetailsPage = () => {
                 <p className="vote-average">{movieDetails.vote_average}</p>
                 <p className="runtime">runtime: {movieDetails.runtime}m</p>
                 <p className="language">original  language: {movieDetails.original_language}</p>
-                <p className="tagline">tagline: {movieDetails.tagline}</p>
                 <p className="status">status: {movieDetails.status}</p>
                 <p className="vote-count">total votes: {movieDetails.vote_count}</p>
         </div>
