@@ -1,12 +1,11 @@
+import { useState } from 'react';
 import AddFavourites from '../AddFavourites/AddFavourites';
 import './MovieCard.css';
 import { Link } from 'react-router-dom';
 
 const MovieCard = ({ movie }) => {
 
-    const addToFavourites = () => {
-        
-    }
+    
 
     return (
         <Link to={`/movie/${movie.id}`}>

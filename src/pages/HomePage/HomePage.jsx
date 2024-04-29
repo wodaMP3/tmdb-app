@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getPopularMovies } from "../../services/tmdbService";
 import MovieCard from "../../components/MovieCard/MovieCard";
+import FavouritesPage from "../FavouritesPage/FavouritesPage";
 
 const HomePage = () => {
 
@@ -17,14 +18,24 @@ const HomePage = () => {
         };
         fetchPopularMovies();
     }, []);
+
+    const [favourites, setFavourites] = useState([]);
+
+    const addToFavourites = (movie) => {
+        if (!favourites.map((fav)=> fav.id === movie.id)) {
+            setFavourites([...favourites, movie])
+        }
+        console.log(setFavourites);
+    }
     
     return (
         <div className="homePage">
             <h1 className="popular">Popular Movies</h1>
             <div className="movie-img"></div>
                 {popularMovies.map(movie => (
-                    <MovieCard key={movie.id} movie={movie}/>
+                    <MovieCard key={movie.id} movie={movie} onClick={addToFavourites}/>
                 ))}
+            <FavouritesPage favourites={favourites}/>
         </div>
     )
 }
