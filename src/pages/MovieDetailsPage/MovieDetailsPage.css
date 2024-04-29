@@ -1,34 +1,34 @@
 .movieDetails {
     display: grid;
-    grid-template-columns: auto 1fr; /* Первый столбец для постера, второй для остальной информации */
-    gap: 20px; /* Пространство между элементами */
-    align-items: center; /* Выравниваем элементы по вертикали */
+    grid-template-columns: auto 1fr auto;
+    gap: 30px; 
+    align-items: center;
 }
 
 .poster {
-    width: 200px; /* Задайте нужную ширину постера */
+    width: 300px; 
 }
 
 .movie-title {
-    font-size: 24px; /* Задайте нужный размер шрифта для названия */
-    margin-bottom: 10px; /* Отступ снизу от названия */
+    font-size: 50px; 
+    margin-bottom: 10px;
 }
 
 .overview {
-    margin-bottom: 10px; /* Отступ снизу от обзора */
+    margin-bottom: 10px;
 }
 
 .genres-title {
-    font-weight: bold; /* Сделать название жанров жирным */
+    font-weight: bold; 
 }
 
 .genres {
-    list-style: none; /* Убрать маркеры списка */
-    padding: 0; /* Убрать отступы внутри списка */
+    list-style: none; 
+    padding: 0; 
 }
 
 .genre-name {
-    margin-right: 10px; /* Отступ между жанрами */
+    margin-right: 10px;
 }
 
 .vote-average,
@@ -37,5 +37,5 @@
 .tagline,
 .status,
 .vote-count {
-    margin-bottom: 10px; /* Отступ снизу от других элементов */
+    margin-bottom: 10px;
 }
