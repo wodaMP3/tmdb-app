@@ -1,16 +1,58 @@
 .movieDetails {
     display: flex;
-    align-items: center;
-}
-
-.poster {
-    width: auto;
-    height: 500px;
-    margin: 50px;
-}
-
-.movie-title {
-    position: relative;
-    left: 50px;
-    bottom: 50%;
-}
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .poster {
+    width: 200px; /* Задайте нужную ширину постера */
+    margin-right: 20px; /* Отступ справа от постера */
+  }
+  
+  .movie-title {
+    font-size: 24px; /* Задайте нужный размер шрифта для названия */
+    margin-bottom: 10px; /* Отступ снизу от названия */
+  }
+  
+  .overview {
+    margin-bottom: 10px; /* Отступ снизу от обзора */
+  }
+  
+  .genres-title {
+    font-weight: bold; /* Сделать название жанров жирным */
+  }
+  
+  .genres {
+    list-style: none; /* Убрать маркеры списка */
+    padding: 0; /* Убрать отступы внутри списка */
+  }
+  
+  .genre-name {
+    margin-right: 10px; /* Отступ между жанрами */
+  }
+  
+  .vote-average {
+    margin-bottom: 10px; /* Отступ снизу от среднего голоса */
+  }
+  
+  .runtime {
+    margin-bottom: 10px; /* Отступ снизу от длительности */
+  }
+  
+  .language {
+    margin-bottom: 10px; /* Отступ снизу от языка */
+  }
+  
+  .tagline {
+    margin-bottom: 10px; /* Отступ снизу от слогана */
+  }
+  
+  .status {
+    margin-bottom: 10px; /* Отступ снизу от статуса */
+  }
+  
+  .vote-count {
+    margin-bottom: 10px; /* Отступ снизу от общего количества голосов */
+  }
+  

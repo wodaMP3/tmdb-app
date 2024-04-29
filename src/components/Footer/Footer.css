@@ -1,8 +1,9 @@
 .footer {
     background-color: black;
-    height: 100px;
-    bottom: 0;
-    width: 100%;
+    color: white;
+    flex-shrink: 0; /* Фиксируем футер внизу */
+    padding: 20px;
+    text-align: center;
 }
 
 .footer-credit {
