@@ -32,7 +32,7 @@ const MovieDetailsPage = () => {
                         <li className='genre-name' key={index}>{genre.name}</li>
                     ))}
                     </ul>
-                <p className="vote-average">{movieDetails.vote_average}</p>
+                <p className="vote-average">rating: {movieDetails.vote_average}</p>
                 <p className="runtime">runtime: {movieDetails.runtime}m</p>
                 <p className="language">original  language: {movieDetails.original_language}</p>
                 <p className="status">status: {movieDetails.status}</p>
