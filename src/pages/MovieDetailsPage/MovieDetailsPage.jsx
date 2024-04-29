@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../../services/tmdbService";
 
-const MovieDetailsPage = ({ movie }) => {
+const MovieDetailsPage = () => {
     let { id } = useParams();
 
     const [movieDetails, setMovieDetails] = useState({});
