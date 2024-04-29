@@ -6,7 +6,6 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    overflow: hidden;
     box-shadow: 0 1px 4px rgba(black, .3);
     cursor: pointer;
 }

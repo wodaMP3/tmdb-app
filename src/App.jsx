@@ -7,14 +7,16 @@ import Footer from './components/Footer/Footer';
 
 const App = () => {
 
-  return  (
-    <div className='main'>
-      <Header />
-      <Search />
-      <RoutesPath />
-      <Footer />
+  return (
+    <div className='main-container'>
+        <Header className='header' />
+        <div className='content'>
+            <Search />
+            <RoutesPath />
+        </div>
+        <Footer className='footer' />
     </div>
-  );
+);
 
 }
 
