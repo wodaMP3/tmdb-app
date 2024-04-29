@@ -6,6 +6,7 @@ import MovieDetailsPage from "./pages/MovieDetailsPage/MovieDetailsPage";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginButton from "./components/LoginButton/LoginButton";
+import FavouritesPage from "./pages/FavouritesPage/FavouritesPage";
 
 const RoutesPath = () => {
     return (
@@ -18,6 +19,7 @@ const RoutesPath = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/registration" element={<RegistrationPage />}/>
           <Route path="/movie/:id" element={<MovieDetailsPage />}/>
+          <Route path="/favourites" element={<FavouritesPage />}/>
         </Routes>
       </div>
     </Router>
