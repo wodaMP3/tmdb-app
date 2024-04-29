@@ -1,4 +1,16 @@
+.movieDetails {
+    display: flex;
+    align-items: center;
+}
+
 .poster {
     width: auto;
-    height: 50px;
+    height: 500px;
+    margin: 50px;
+}
+
+.movie-title {
+    position: relative;
+    left: 50px;
+    bottom: 50%;
 }

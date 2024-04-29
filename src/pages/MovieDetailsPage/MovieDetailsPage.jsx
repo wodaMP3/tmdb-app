@@ -29,8 +29,8 @@ const MovieDetailsPage = () => {
                 <p className="genres-title">Genres:</p>
                     <ul className="genres">
                     {movieDetails.genres && movieDetails.genres.map((genre, index) => (
-                    <li className='genre-name' key={index}>{genre.name}</li>
-                ))}
+                        <li className='genre-name' key={index}>{genre.name}</li>
+                    ))}
                     </ul>
                 <p className="vote-average">{movieDetails.vote_average}</p>
                 <p className="runtime">runtime: {movieDetails.runtime}m</p>
