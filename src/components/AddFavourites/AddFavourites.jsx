@@ -1,9 +1,20 @@
+import { useState } from "react";
 
+const AddFavourites = ({ movie, onAddToFavourites }) => {
+	
+	const handleAddToFavourites = () => {
+		if (typeof onAddToFavourites === 'function'){
+			onAddToFavourites(movie);
+		}
+	}
 
-const AddFavourites = () => {
     return (
         <>
-            <span className="favourite">Add to favourites</span>
+
+
+            <span className="favourite" 
+				onClick={handleAddToFavourites}
+			>Add to</span>
             <svg
 				width='1em'
 				height='1em'
