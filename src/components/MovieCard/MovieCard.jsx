@@ -3,14 +3,9 @@ import AddFavourites from '../AddFavourites/AddFavourites';
 import './MovieCard.css';
 import { Link } from 'react-router-dom';
 
-const MovieCard = ({ movie }) => {
-    const [favorites, setFavorites] = useState([]);
+const MovieCard = ({ movie, AddToFavourites}) => {
 
-    const addToFavorites = (movie) => {
-        setFavorites([...favorites, movie]);
-    };
 
-    console.log(favorites, setFavorites)
     return (
             <div className="movie-card">
                 <div className='movie-card-flipped'>
@@ -18,7 +13,7 @@ const MovieCard = ({ movie }) => {
                     alt={movie.title} className="movie-img"/>
                 </div>
                 <div className='overlay'>
-                    <AddFavourites movie={movie} onAddToFavourites={addToFavorites}/>
+                    <AddFavourites movie={movie} onAddToFavourites={AddToFavourites}/>
                 </div>
             </div>
     )

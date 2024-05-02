@@ -25,7 +25,6 @@ const HomePage = () => {
         if (!favourites.map((fav)=> fav.id === movie.id)) {
             setFavourites([...favourites, movie])
         }
-        console.log(setFavourites);
     }
     
     return (

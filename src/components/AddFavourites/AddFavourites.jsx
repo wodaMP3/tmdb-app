@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const AddFavourites = ({ movie, onAddToFavourites }) => {
 	
@@ -11,7 +12,7 @@ const AddFavourites = ({ movie, onAddToFavourites }) => {
     return (
         <>
 
-
+		<Link to={'/favourites'}>
             <span className="favourite" 
 				onClick={handleAddToFavourites}
 			>Add to</span>
@@ -28,6 +29,7 @@ const AddFavourites = ({ movie, onAddToFavourites }) => {
 					d='M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z'
 				/>
 			</svg>
+			</Link>
         </>
     )
 }
