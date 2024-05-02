@@ -10,7 +10,7 @@ const AddFavourites = ({ movie, onAddToFavourites }) => {
 	}
 
     return (
-        <>
+        <div className="favs-page">
 
 		<Link to={'/favourites'}>
             <span className="favourite" 
@@ -30,7 +30,7 @@ const AddFavourites = ({ movie, onAddToFavourites }) => {
 				/>
 			</svg>
 			</Link>
-        </>
+        </div>
     )
 }
 

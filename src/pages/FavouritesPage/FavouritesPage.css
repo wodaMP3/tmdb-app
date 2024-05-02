@@ -1,0 +1,6 @@
+.no-favs {
+    display: grid;
+    position: relative;
+    font-size: 50px;
+    justify-self: center;
+}

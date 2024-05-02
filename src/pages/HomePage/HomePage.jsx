@@ -32,9 +32,9 @@ const HomePage = () => {
             <h1 className="popular">Popular Movies</h1>
             <div className="movie-img"></div>
                 {popularMovies.map(movie => (
-                    <MovieCard key={movie.id} movie={movie} onClick={addToFavourites}/>
+                    <MovieCard key={movie.id} movie={movie}/>
                 ))}
-            <FavouritesPage favourites={favourites}/>
+            <FavouritesPage favourites={favourites} addToFavourites={addToFavourites}/>
         </div>
     )
 }
