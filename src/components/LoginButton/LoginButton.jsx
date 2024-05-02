@@ -11,7 +11,7 @@ const LoginButton = () => {
                 color: 'white',
                 position: "fixed",
                 top: 0,
-                marginTop: 20 
+                margin: 20 
             }}>Login</Button>
             </Link>
     )

@@ -1,0 +1,11 @@
+
+.favs-btn {
+    z-index: 11111;
+    cursor: pointer;
+    left: 20%;
+}
+
+.favs-btn:hover {
+    text-decoration: underline;
+}
+

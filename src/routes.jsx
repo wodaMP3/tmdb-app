@@ -7,6 +7,7 @@ import MovieDetailsPage from "./pages/MovieDetailsPage/MovieDetailsPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginButton from "./components/LoginButton/LoginButton";
 import FavouritesPage from "./pages/FavouritesPage/FavouritesPage";
+import GoToFavsButton from "./components/GoToFavsButton/GoToFavsButton";
 
 const RoutesPath = () => {
     return (
@@ -14,6 +15,7 @@ const RoutesPath = () => {
       <div>
           <BackToHomeBtn />
           <LoginButton />
+          <GoToFavsButton />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
