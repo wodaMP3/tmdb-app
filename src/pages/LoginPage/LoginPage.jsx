@@ -6,8 +6,8 @@ import { AuthContext } from "../../utils/auth";
 import { options } from "../../utils/auth";
 import { Link } from "react-router-dom";
 
-const authURL = 'https://api.themoviedb.org/3/authentication/token/validate_with_login';
 const bearer = import.meta.env.VITE_BEARER;
+const authURL = `https://www.themoviedb.org/authenticate/${bearer}`;
 
 const LoginPage = () => {
 
