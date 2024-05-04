@@ -27,8 +27,7 @@ const LoginPage = () => {
         event.preventDefault();
     }
 
-    const [data, setData] = useState([]);
-    const isAunthenticated = useContext(AuthContext);
+    const [token, setToken] = useState(null);
 
     useEffect(() => {
         const requestToken = async () => {
@@ -43,7 +42,7 @@ const LoginPage = () => {
         
             try {
               const response = await axios.request(options);
-              setData(response.data);
+              setToken(response.data.request_token);
               console.log('Request new token successful:', response.data);
             } catch (error) {
               console.error('Failed to request new token:', error);
