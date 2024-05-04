@@ -7,7 +7,8 @@ import { options } from "../../utils/auth";
 import { Link } from "react-router-dom";
 
 const bearer = import.meta.env.VITE_BEARER;
-const authURL = `https://api.themoviedb.org/3/authentication/token/new`;
+const requestNewTokenURL = `https://api.themoviedb.org/3/authentication/token/new`;
+const permissionURL = `https://www.themoviedb.org/authenticate/{REQUEST_TOKEN}`;
 
 const LoginPage = () => {
 
@@ -29,10 +30,29 @@ const LoginPage = () => {
     const [data, setData] = useState([]);
     const isAunthenticated = useContext(AuthContext);
 
-    const handleLogin = async () => {
+    const requestToken = async () => {
         const options = {
           method: 'GET',
-          url: authURL,
+          url: requestNewTokenURL,
+          headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${bearer}`
+          }
+        };
+    
+        try {
+          const response = await axios.request(options);
+          setData(response.data);
+          console.log('Request new token successful:', response.data);
+        } catch (error) {
+          console.error('Failed to request new token:', error);
+        }
+      };
+
+      const handleLogin = async () => {
+        const options = {
+          method: 'GET',
+          url: permissionURL,
           headers: {
             accept: 'application/json',
             Authorization: `Bearer ${bearer}`
@@ -47,6 +67,7 @@ const LoginPage = () => {
           console.error('Failed to fetch authorization:', error);
         }
       };
+    
 
     return (
         <div className="login">
@@ -56,7 +77,7 @@ const LoginPage = () => {
                 <input className='email-input' type="email" id="email" value={email} onChange={handleEmailChange} required/>
                 <label htmlFor="password">Password: </label>
                 <input className='password-input' type="password" name="password" id="password" value={password} onChange={handlePasswordChange} required/>
-                <button onClick={handleLogin}>login</button>
+                <button onClick={requestToken}>login</button>
                 <div>
                     <p>
                         Still have no account? 
