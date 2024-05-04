@@ -3,7 +3,6 @@ import { getPopularMovies } from "../../services/tmdbService";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import FavouritesPage from "../FavouritesPage/FavouritesPage";
 
-const bearer = import.meta.env.VITE_BEARER;
 
 const HomePage = () => {
 

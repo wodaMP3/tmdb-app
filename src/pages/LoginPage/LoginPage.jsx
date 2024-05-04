@@ -7,7 +7,7 @@ import { options } from "../../utils/auth";
 import { Link } from "react-router-dom";
 
 const bearer = import.meta.env.VITE_BEARER;
-const authURL = `https://www.themoviedb.org/authenticate/${bearer}`;
+const authURL = `https://www.themoviedb.org/authenticate`;
 
 const LoginPage = () => {
 
@@ -29,37 +29,24 @@ const LoginPage = () => {
     const [data, setData] = useState([]);
     const isAunthenticated = useContext(AuthContext);
 
-    useEffect(() => {
-        const fetchData = async(e) => {
-            e.preventDefault();
-
-            try {
-                const options = {
-                    email: email,
-                    password: password,
-                    method: 'POST',
-                    url: authURL,
-                    headers: {
-                        accept: 'application/json',
-                        'content-type': 'application/json',
-                        Authorization: `Bearer ${bearer}`
-                    }
-                }
-
-                const response = await axios.request(options);
-            setData(response.data);
-            console.log('Authorization successful:', response.data);
-            } catch (error) {
-                console.error('failed to fetch authorization:', error.message || error.response.data)
-                setData([]);
-            }
+    const handleLogin = async () => {
+        const options = {
+          method: 'GET',
+          url: 'https://api.themoviedb.org/3/authentication',
+          headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${bearer}`
+          }
         };
-
-        if(isAunthenticated) {
-            fetchData();
-            <Link to='/'></Link>
+    
+        try {
+          const response = await axios.request(options);
+          setData(response.data);
+          console.log('Authorization successful:', response.data);
+        } catch (error) {
+          console.error('Failed to fetch authorization:', error);
         }
-    }, [isAunthenticated])
+      };
 
     return (
         <div className="login">
@@ -69,7 +56,7 @@ const LoginPage = () => {
                 <input className='email-input' type="email" id="email" value={email} onChange={handleEmailChange} required/>
                 <label htmlFor="password">Password: </label>
                 <input className='password-input' type="password" name="password" id="password" value={password} onChange={handlePasswordChange} required/>
-                <button>login</button>
+                <button onClick={handleLogin}>login</button>
                 <div>
                     <p>
                         Still have no account? 
