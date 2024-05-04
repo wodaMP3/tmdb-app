@@ -28,6 +28,7 @@ const LoginPage = () => {
     }
 
     const [token, setToken] = useState(null);
+    const [isTrue, setIsTrue] = useState(null);
 
     useEffect(() => {
         const requestToken = async () => {
@@ -44,16 +45,22 @@ const LoginPage = () => {
               const response = await axios.request(options);
               setToken(response.data.request_token);
               console.log('Request new token successful:', response.data);
+
+              const validateToken = await axios.post(permissionURL, {
+                request_token: response.data.request_token
+              });
+              console.log('Token validation successful:', validateToken.data)
             } catch (error) {
               console.error('Failed to request new token:', error);
             }
         };
         requestToken();
+
     }, [])
 
     
 
-      const handleLogin = async () => {
+      const handleLogind = async () => {
         const options = {
           method: 'GET',
           url: permissionURL,
@@ -74,11 +81,11 @@ const LoginPage = () => {
     
 
     return (
-        <div className="login">
+        <div className="login-container">
             <h2 className="login-header">Login</h2>
             <form onSubmit={handleSumbit}>
                 <label htmlFor="email">Email: </label>
-                <input className='email-input' type="email" id="email" value={email} onChange={handleEmailChange} required/>
+                <input className='email-input' type="login" id="login" value={email} onChange={handleEmailChange} required/>
                 <label htmlFor="password">Password: </label>
                 <input className='password-input' type="password" name="password" id="password" value={password} onChange={handlePasswordChange} required/>
                 <button>login</button>
