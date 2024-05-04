@@ -30,24 +30,29 @@ const LoginPage = () => {
     const [data, setData] = useState([]);
     const isAunthenticated = useContext(AuthContext);
 
-    const requestToken = async () => {
-        const options = {
-          method: 'GET',
-          url: requestNewTokenURL,
-          headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${bearer}`
-          }
+    useEffect(() => {
+        const requestToken = async () => {
+            const options = {
+              method: 'GET',
+              url: requestNewTokenURL,
+              headers: {
+                accept: 'application/json',
+                Authorization: `Bearer ${bearer}`
+              }
+            };
+        
+            try {
+              const response = await axios.request(options);
+              setData(response.data);
+              console.log('Request new token successful:', response.data);
+            } catch (error) {
+              console.error('Failed to request new token:', error);
+            }
         };
+        requestToken();
+    }, [])
+
     
-        try {
-          const response = await axios.request(options);
-          setData(response.data);
-          console.log('Request new token successful:', response.data);
-        } catch (error) {
-          console.error('Failed to request new token:', error);
-        }
-      };
 
       const handleLogin = async () => {
         const options = {
@@ -77,7 +82,7 @@ const LoginPage = () => {
                 <input className='email-input' type="email" id="email" value={email} onChange={handleEmailChange} required/>
                 <label htmlFor="password">Password: </label>
                 <input className='password-input' type="password" name="password" id="password" value={password} onChange={handlePasswordChange} required/>
-                <button onClick={requestToken}>login</button>
+                <button>login</button>
                 <div>
                     <p>
                         Still have no account? 
