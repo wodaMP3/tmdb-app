@@ -7,7 +7,7 @@ import { options } from "../../utils/auth";
 import { Link } from "react-router-dom";
 
 const bearer = import.meta.env.VITE_BEARER;
-const authURL = `https://www.themoviedb.org/authenticate`;
+const authURL = `https://api.themoviedb.org/3/authentication/token/new`;
 
 const LoginPage = () => {
 
@@ -32,7 +32,7 @@ const LoginPage = () => {
     const handleLogin = async () => {
         const options = {
           method: 'GET',
-          url: 'https://api.themoviedb.org/3/authentication',
+          url: authURL,
           headers: {
             accept: 'application/json',
             Authorization: `Bearer ${bearer}`
