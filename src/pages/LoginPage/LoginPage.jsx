@@ -15,20 +15,8 @@ const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    }
-
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    }
-
-    const handleSumbit = async (event) => {
-        event.preventDefault();
-    }
-
     const [token, setToken] = useState(null);
-    const [isTrue, setIsTrue] = useState(null);
+    
 
     useEffect(() => {
         const requestToken = async () => {
@@ -57,33 +45,11 @@ const LoginPage = () => {
         requestToken();
 
     }, [])
-
     
-
-      const handleLogind = async () => {
-        const options = {
-          method: 'GET',
-          url: permissionURL,
-          headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${bearer}`
-          }
-        };
-    
-        try {
-          const response = await axios.request(options);
-          setData(response.data);
-          console.log('Authorization successful:', response.data);
-        } catch (error) {
-          console.error('Failed to fetch authorization:', error);
-        }
-      };
-    
-
     return (
         <div className="login-container">
             <h2 className="login-header">Login</h2>
-            <form onSubmit={handleSumbit}>
+            <form>
                 <label htmlFor="email">Email: </label>
                 <input className='email-input' type="login" id="login" value={email} onChange={handleEmailChange} required/>
                 <label htmlFor="password">Password: </label>
