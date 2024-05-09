@@ -20,6 +20,7 @@ const LoginPage = () => {
               url: requestNewTokenURL,
               headers: {
                 accept: 'application/json',
+                'content-type': 'application/json',
                 Authorization: `Bearer ${bearer}`
               }
             };
@@ -29,12 +30,12 @@ const LoginPage = () => {
               setToken(response.data.request_token);
               console.log('Request new token successful:', response.data);
 
-              const validateToken = await axios.post(permissionURL, {
+              const validateToken = await axios.post('http://localhost:5000/authentication/session/new', {
                 request_token: response.data.request_token
               });
               console.log('Token validation successful:', validateToken.data)
             } catch (error) {
-              console.error('Failed to request new token:', error);
+              console.error('Failed to validate new token:', error);
             }
         };
         requestToken();
