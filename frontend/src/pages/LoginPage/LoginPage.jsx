@@ -3,6 +3,8 @@
 // import axios from 'axios';
 // import './LoginPage.css';
 
+const { googleProvider } = require("../../firebase")
+
 // const bearer = import.meta.env.VITE_BEARER;
 // const requestNewTokenURL = `https://api.themoviedb.org/3/authentication/token/new`;
 // const permissionURL = `https://www.themoviedb.org/authenticate/{REQUEST_TOKEN}`;
