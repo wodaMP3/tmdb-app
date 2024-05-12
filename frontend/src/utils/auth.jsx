@@ -1,32 +1,31 @@
-// import axios from "axios";
-// import { createContext, useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { createClient } from '@supabase/supabase-js';
+import { Auth } from '@supabase/auth-ui-react';
+import { ThemeSupa } from "@supabase/auth-ui-shared";
 
-// const AuthContext = createContext();
-// const bearer = import.meta.env.VITE_BEARER;
+const apiKey = import.meta.env.VITE_SUPABASE_API_KEY;
 
-// const AuthProvider = ({ children }) => {
-//     const [isAunthenticated, setIsAunthenticated] = useState(false);
+const supabase = createClient('https://wlfgyltcfabqstoqakiw.supabase.co', apiKey)
+    export default function LogAuth() {
+        const [session, setSession] = useState(null)
 
-//     useEffect(()=> {
-//         const token = localStorage.getItem('token');
-//         setIsAunthenticated(!token);
-//     }, [])
+        useEffect(() => {
+            supabase.auth.getSession().then(({data: { session }}) => {
+                setSession(session)
+            })
 
-//     return <AuthContext.Provider value={isAunthenticated}>{children}
-//             </AuthContext.Provider>
-// }
+            const {
+                data: { subscription },
+            } = supabase.auth.onAuthStateChange((_event, session) => {
+                setSession(session)
+            })
+            return () => subscription.unsubscribe()
+        }, [])
 
-
-// const authURL = 'https://api.themoviedb.org/3/authentication/token/validate_with_login';
-
-// const options = {
-//     method: 'POST',
-//     url: authURL,
-//     headers: {
-//         accept: 'application/json',
-//         'content-type': 'application/json',
-//         Authorization: `Bearer ${bearer}`
-//     }
-// }
-
-// export { AuthContext, AuthProvider, options }
+        if(!session) {
+            return (<Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />)
+        }
+        else {
+            return (<div>Logged in!</div>)
+        }
+    }
