@@ -32,9 +32,15 @@ import { signInWithGooglePopup } from "../firebase";
   const Auth = () => {
 
     const logGoogleUser = async () => {
+      try {
       const response = await signInWithGooglePopup();
-      console.log(response)
+      const user = response.user;
+      console.log(user)
+      return user;
+    } catch (error) {
+      console.error('Auth error:', error)
     }
+    } 
     return <div>
       <button onClick={logGoogleUser}> Signin</button>
       </div>
